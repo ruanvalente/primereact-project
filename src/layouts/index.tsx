@@ -7,7 +7,7 @@ export function Layout() {
   const tabMenuTemplate = (item: MenuItem, options: MenuItemOptions) => {
     console.log(item, options);
     return (
-      <Link to={item.url} className={options.className}>
+      <Link to={item.url || ""} className={options.className}>
         <span style={{ marginRight: "0.75rem" }}>{item.label}</span>
         <span className={item.icon}></span>
       </Link>
