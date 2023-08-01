@@ -4,7 +4,7 @@ import { TabMenu } from "primereact/tabmenu";
 import { MenuItem, MenuItemOptions } from "primereact/menuitem";
 
 export function Layout() {
-  const iconItemTemplate = (item: MenuItem, options: MenuItemOptions) => {
+  const tabMenuTemplate = (item: MenuItem, options: MenuItemOptions) => {
     console.log(item, options);
     return (
       <Link to={item.url} className={options.className}>
@@ -18,19 +18,19 @@ export function Layout() {
       label: "Home",
       icon: "pi pi-fw pi-home",
       url: "",
-      template: iconItemTemplate,
+      template: tabMenuTemplate,
     },
     {
       label: "Product",
       icon: "pi pi-fw pi-calendar",
       url: "product",
-      template: iconItemTemplate,
+      template: tabMenuTemplate,
     },
     {
       label: "About",
       icon: "pi pi-fw pi-pencil",
       url: "about",
-      template: iconItemTemplate,
+      template: tabMenuTemplate,
     },
   ];
   return (
