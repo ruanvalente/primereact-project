@@ -1,25 +1,25 @@
+import { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Product } from "../pages/Product";
-import { About } from "../pages/About";
-import { Home } from "../pages/Home";
-import { Layout } from "../layouts";
+
+import { Loading } from "../components/Loading";
+
+const About = lazy(() => import("../pages/About"));
+const Home = lazy(() => import("../pages/Home"));
+const Product = lazy(() => import("../pages/Product"));
+const Layout = lazy(() => import("../layouts"));
 
 export function AppRoutes() {
   return (
-    // <Routes>
-    //   <Route element={<Layout />}>
-    //     <Route path="/" element={<Product />} />
-    //     <Route path="about" element={<Product />} />
-    //   </Route>
-    // </Routes>
     <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="product" element={<Product />} />
-          <Route path="about" element={<About />} />
-        </Route>
-      </Routes>
+      <Suspense fallback={<Loading />}>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="product" element={<Product />} />
+            <Route path="about" element={<About />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }
