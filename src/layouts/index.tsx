@@ -5,6 +5,7 @@ import { MenuItem, MenuItemOptions } from "primereact/menuitem";
 
 export default function Layout() {
   const tabMenuTemplate = (item: MenuItem, options: MenuItemOptions) => {
+    console.log(item);
     return (
       <Link to={item.url || ""} className={options.className}>
         <span style={{ marginRight: "0.75rem" }}>{item.label}</span>
@@ -14,21 +15,21 @@ export default function Layout() {
   };
   const items = [
     {
-      label: "Home",
+      label: "Diagnostico",
       icon: "pi pi-fw pi-home",
-      url: "",
+      url: "/diagnostico",
       template: tabMenuTemplate,
     },
     {
-      label: "Product",
+      label: "Chamado Técnico",
       icon: "pi pi-fw pi-calendar",
-      url: "product",
+      url: "/diagnostico/chamado-tecnico",
       template: tabMenuTemplate,
     },
     {
-      label: "About",
+      label: "Agendamento",
       icon: "pi pi-fw pi-pencil",
-      url: "about",
+      url: "/diagnostico/agendamentos",
       template: tabMenuTemplate,
     },
   ];
