@@ -1,8 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import { Home } from "../pages/home";
-import { ChamadoTecnico } from "../pages/chamadoTecnico";
-import { Agendamento } from "../pages/agendamento";
-import { DetalhesAgendamento } from "../pages/detalhesAgendamento";
+import { lazy } from "react";
+
+const Home = lazy(() => import("../pages/home"));
+const ChamadoTecnico = lazy(() => import("../pages/chamadoTecnico"));
+const Agendamento = lazy(() => import("../pages/agendamento"));
+const DetalhesAgendamento = lazy(() => import("../pages/detalhesAgendamento"));
 
 export function DiagnosticoRouters() {
   return (

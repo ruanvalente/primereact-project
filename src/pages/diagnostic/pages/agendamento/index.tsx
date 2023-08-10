@@ -1,3 +1,3 @@
-export function Agendamento() {
+export default function Agendamento() {
   return <div>Agendamento</div>;
 }
